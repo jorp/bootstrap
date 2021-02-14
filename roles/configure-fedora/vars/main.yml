@@ -5,6 +5,7 @@ install_packages:
   - bash-completion
   - borgbackup
   - blender
+  - cabextract
   - chrome-gnome-shell
   - ffmpeg
   - fping
@@ -23,6 +24,7 @@ install_packages:
   - newsboat
   - nmap
   - obs-studio
+  - p7zip
   - pcmanfm
   - python3-devel
   - python3-streamlink
