@@ -17,6 +17,7 @@
 
     - name: replace line in NetworkManager.conf
       replace:
+        path: /etc/NetworkManager/NetworkManager.conf
         regexp: '#dns=default'
         replace: 'dns=default'
 
