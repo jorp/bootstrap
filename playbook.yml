@@ -1,4 +1,8 @@
 ---
 - hosts: localhost
+  vars:
+      gnome_extension_ids:
+        - 770
   roles:
     - { role: configure-fedora, become: yes }
+    - { role: jaredhocutt.gnome_extensions }
