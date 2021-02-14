@@ -7,3 +7,6 @@
 
 ## roles
 `ansible-galaxy install -r requirements.yml`
+
+### TODO
+- work with `stow`

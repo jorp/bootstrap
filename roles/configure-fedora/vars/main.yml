@@ -1,2 +1,14 @@
 ---
 # vars file for configure-fedora
+install_packages:
+  - ffmpeg
+  - fping
+  - git
+  - gnome-extensions-app
+  - gnome-tweaks
+  - stow
+  - python3-psutil
+
+remove_packages:
+  - PackageKit
+  - cheese

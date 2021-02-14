@@ -1,13 +1,9 @@
 ---
 - hosts: localhost
   vars:
+      patch: no
       gnome_extension_ids:
         - 770
-      install_packages:
-        - fping
-      remove_packages:
-        - cheese
-      patch: no
       firefox_profiles:
         default-release:
           extensions:

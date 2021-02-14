@@ -37,3 +37,7 @@
         name: NetworkManager
         state: restarted
 
+- name: make bash completion case insensitive
+  lineinfile:
+    path: /etc/inputrc
+    line: "set completion-ignore-case On"

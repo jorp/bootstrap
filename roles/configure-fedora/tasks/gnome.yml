@@ -1,8 +1,6 @@
 - name: GNOME keyboard shortcuts
-  hosts: localhost
-  become: yes
-
-  tasks:
+  become: no
+  block:
     - name: terminal shortcut name
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
