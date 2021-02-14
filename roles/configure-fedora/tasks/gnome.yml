@@ -1,0 +1,30 @@
+- name: GNOME keyboard shortcuts
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: terminal shortcut name
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+        value: "'Open Terminal'"
+    - name: terminal shortcut command
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+        value: "'gnome-terminal'"
+    - name: terminal shortcut binding
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
+        value: "'Menu'"   
+
+    - name: screenshot shortcut name
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name"
+        value: "'Take Interactive Screenshot'"
+    - name: screenshot shortcut command
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command"
+        value: "'gnome-screenshot -i'"
+    - name: screenshot shortcut binding
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
+        value: "'Print'"   
