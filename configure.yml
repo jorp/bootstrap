@@ -1,3 +1,29 @@
+- name: use NetworkManager for DNS
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: disable systemd-resolved
+      systemd:
+        name: systemd-resolved
+        state: stopped
+        enabled: no
+        masked: yes
+
+    - name: remove /etc/resolv.conf symlink
+      file:
+        path: /etc/resolv.conf
+        state: absent
+
+    - name: replace line in NetworkManager.conf
+      replace:
+        regexp: '#dns=default'
+        replace: 'dns=default'
+
+    - name: restart network manager
+      systemd:
+        name: NetworkManager
+        state: restarted
 - name: remove packages
   hosts: localhost
   become: yes
@@ -108,32 +134,6 @@
         -  "Public"
         - "Templates"
 
-- name: use NetworkManager for DNS
-  hosts: localhost
-  become: yes
-
-  tasks:
-    - name: disable systemd-resolved
-      systemd:
-        name: systemd-resolved
-        state: stopped
-        enabled: no
-        maked: yes
-
-    - name: remove /etc/resolv.conf symlink
-      file:
-        path: /etc/resolv.conf
-        state: absent
-
-    - name: replace line in NetworkManager.conf
-      replace:
-        regexp: '#dns=default'
-        replace: 'dns=default'
-
-    - name: restart network manager
-      systemd:
-        name: NetworkManager
-        state: restarted
 
 - name: GNOME keyboard shortcuts
   hosts: localhost
