@@ -1,0 +1,6 @@
+---
+# tasks file for configure-fedora
+- name: install package
+  dnf:
+    name: baobab
+    state: latest
