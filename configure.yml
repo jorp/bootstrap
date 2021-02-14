@@ -1,0 +1,84 @@
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: add rpmfusion repos 
+      dnf:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
+        - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
+
+    - name: patch system
+      dnf:
+        update_cache: yes
+        name: "*"
+        state: latest
+
+    - name: install packages
+      dnf:
+        update_cache: yes
+        name:
+          - arp-scan
+          - baobab
+          - bash-completion
+          - borgbackup
+          - blender
+          - ffmpeg
+          - fping
+          - git
+          - golang
+          - htop
+          - keepassxc
+          - ImageMagick
+          - java-11-openjdk
+          - lm_sensors
+          - mplayer
+          - mpv
+          - neofetch
+          - nethogs
+          - newsboat
+          - nmap
+          - obs-studio
+          - pcmanfm
+          - python3-devel
+          - python3-streamlink
+          - redshift-gtk
+          - rkhunter
+          - sshfs
+          - stow
+          - syncthing
+          - texlive
+          - texlive-preprint
+          - texstudio
+          - tlp
+          - tmux 
+          - units
+          - unrar
+          - vim
+          - vlc
+          - wireshark
+          - youtube-dl
+        state: latest
+
+    - name: pip3 pkgs
+      pip:
+        name:
+          - thefuck
+          - mps-youtube
+          - dbus-python
+          - pygobject
+
+    - name: get local user name
+      command: whoami
+      changed_when: false
+      become: false
+      register: whoami
+
+    - name: remove default directories
+      file:
+        state: absent
+        path: "/home/{{ whoami.stdout }}/{{ item }}"
+      loop:
+        -  "Public"
+        - "Templates"
