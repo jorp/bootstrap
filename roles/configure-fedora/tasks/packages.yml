@@ -70,3 +70,11 @@
         state: present
         method: user
       loop: "{{ flatpaks }}"
+
+- name: pip3 pkgs
+  pip:
+    name:
+      - thefuck
+      - mps-youtube
+      - dbus-python
+      - pygobject
