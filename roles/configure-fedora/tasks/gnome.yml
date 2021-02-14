@@ -89,6 +89,11 @@
         key: "/org/gnome/desktop/search-providers/disabled"
         value: "['org.gnome.Nautilus.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop', 'firefox.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Contacts.desktop']"
 
+    - name: disable system location
+      dconf:
+        key: "/org/gnome/system/location/enabled"
+        value: "false"
+
 - name: disable event sounds
   become: no
   dconf:
@@ -156,3 +161,8 @@
       dconf:
         key: "/org/gnome/nautilus/preferences/default-folder-viewer"
         value: "'list-view'"
+
+- name: show window list on all monitors
+  dconf:
+    key: "/org/gnome/shell/extensions/window-list/show-on-all-monitors"
+    value: "true"
