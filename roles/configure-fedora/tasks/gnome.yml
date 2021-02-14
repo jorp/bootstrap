@@ -1,6 +1,10 @@
 - name: GNOME keyboard shortcuts
   become: no
   block:
+    - name: add media keys entry
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-bindings"
+        value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
     - name: terminal shortcut name
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
@@ -128,3 +132,27 @@
   dconf:
     key: "/org/gnome/mutter/attach-modal-dialogs"
     value: "false"
+
+- name: paint it black
+  become: no
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Adwaita-dark'"
+
+- name: nautilus config
+  become: no
+  block:
+    - name: change default column order
+      dconf:
+        key: "/org/gnome/nautilus/list-view/default-column-order"
+        value: "['name', 'detailed_type', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred']"
+
+    - name: change default visible columns
+      dconf:
+        key: "/org/gnome/nautilus/list-view/default-visible-columns"
+        value: "['name', 'detailed_type', 'size', 'date_modified_with_time']"
+
+    - name: default folder view
+      dconf:
+        key: "/org/gnome/nautilus/preferences/default-folder-viewer"
+        value: "'list-view'"
