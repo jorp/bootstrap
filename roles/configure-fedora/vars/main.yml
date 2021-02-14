@@ -9,6 +9,7 @@ install_packages:
   - chrome-gnome-shell
   - ffmpeg
   - fping
+  - fzf
   - git
   - gnome-extensions-app
   - gnome-tweaks
@@ -48,6 +49,7 @@ install_packages:
   - virt-manager
   - vlc
   - wireshark
+  - xclip
   - youtube-dl
 
 remove_packages:
