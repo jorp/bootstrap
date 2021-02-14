@@ -1,5 +1,7 @@
-- hosts: localhost
+- name: configure repos and install packages
+  hosts: localhost
   become: yes
+
   tasks:
     - name: add rpmfusion repos 
       dnf:
@@ -45,6 +47,7 @@
           - python3-streamlink
           - redshift-gtk
           - rkhunter
+          - rsync
           - sshfs
           - stow
           - syncthing
@@ -69,6 +72,11 @@
           - dbus-python
           - pygobject
 
+- name: remove default fluff
+  hosts: localhost
+  become: yes
+
+  tasks:
     - name: get local user name
       command: whoami
       changed_when: false
@@ -82,3 +90,30 @@
       loop:
         -  "Public"
         - "Templates"
+
+- name: use NetworkManager for DNS
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: disable systemd-resolved
+      systemd:
+        name: systemd-resolved
+        state: stopped
+        enabled: no
+        maked: yes
+
+    - name: remove /etc/resolv.conf symlink
+      file:
+        path: /etc/resolv.conf
+        state: absent
+
+    - name: replace line in NetworkManager.conf
+      replace:
+        regexp: '#dns=default'
+        replace: 'dns=default'
+
+    - name: restart network manager
+      systemd:
+        name: NetworkManager
+        state: restarted
