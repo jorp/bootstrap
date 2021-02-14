@@ -28,6 +28,10 @@
   loop: "{{ install_packages }}"
   when: install
 
+- name: gather package facts
+  package_facts:
+    manager: auto
+
 - name: download and install mullvad rpm
   block:
     - name: download package
@@ -39,3 +43,10 @@
     - name: install package
       dnf:
         name: "{{ res.dest }}"
+        disable_gpg_check: yes
+
+    - name: remove package
+      file:
+        path: reg.dest
+        state: absent
+  when: "'mullvad-vpn' not in ansible_facts.packages"
