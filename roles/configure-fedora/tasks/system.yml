@@ -40,6 +40,13 @@
         state: restarted
   when: ansible_facts.services['systemd-resolved.service'].state != 'inactive' and ansible_facts.services['systemd-resolved.service'].status != 'masked'
 
+- name: disable & mask polkit
+  systemd:
+    name: polkit
+    state: stopped
+    enabled: no
+    masked: yes
+
 - name: make bash completion case insensitive
   lineinfile:
     path: /etc/inputrc

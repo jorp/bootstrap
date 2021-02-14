@@ -15,7 +15,6 @@ install_packages:
   - htop
   - keepassxc
   - ImageMagick
-  - java-11-openjdk
   - lm_sensors
   - mplayer
   - mpv
@@ -53,8 +52,11 @@ remove_packages:
   - PackageKit-gstreamer-plugin
   - PackageKit-gtk3-module
   - cheese
+  - fedora-logos-httpd
   - gamemode
+  - gnome-getting-started-docs
   - gnome-shell-extension-apps-menu
+  - gnome-shell-extension-background-logo
   - gnome-shell-extension-horizontal-workspaces
   - gnome-shell-extension-places-menu
   - gnome-online-miners
@@ -62,9 +64,17 @@ remove_packages:
   - gnome-initial-setup
   - gnome-software
   - gnome-tour
+  - gnome-user-docs
+  - gnome-user-share
+  - httpd
+  - httpd-filesystem
+  - httpd-tools
+  - mod_dnssd
+  - mod_http2
   - libtracker-miner
   - libzapojit
   - tracker
+  - ttmkfdir
 
 flatpaks:
   - com.discordapp.Discord
