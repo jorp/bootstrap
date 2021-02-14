@@ -57,5 +57,5 @@ remove_packages:
 
 flatpaks:
   - com.discordapp.Discord
-  - com.spotify.Spotify
+  - com.spotify.Client
   - com.mattermost.Desktop
