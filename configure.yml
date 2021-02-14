@@ -10,7 +10,6 @@
           - PackageKit
           - cheese
           - gamemode
-          - 
           - tracker
 
   tasks:
@@ -23,6 +22,7 @@
       dnf:
         name: "{{ item }}"
         state: latest
+        disable_gpg_check: yes # not recommended
       loop:
         - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
         - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
@@ -140,7 +140,7 @@
   become: yes
 
   tasks:
-  	- name: terminal shortcut name
+    - name: terminal shortcut name
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
         value: "'Open Terminal'"
@@ -153,7 +153,7 @@
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
         value: "'Menu'"   
 
-  	- name: screenshot shortcut name
+    - name: screenshot shortcut name
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name"
         value: "'Take Interactive Screenshot'"
@@ -165,3 +165,20 @@
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
         value: "'Print'"   
+
+- name: GNOME keyboard shortcuts
+  hosts: localhost
+  roles: 
+    - role: gnome_extensions
+      vars:
+        gnome_extension_ids:
+          - 615 # AppIndicator and KStatusNotifierItem Support
+          - 751 # Audio Output Switcher
+          - 517 # Caffeine
+          - 1166 # Extension Update Notifier
+          - 755 # Hibernate Status Button
+          - 1128 # Hide Activities Button
+          - 1379 # Mpris Indicator Button
+          - 355 # Status Area Horizontal Spacing
+          - 1460 # Vitals
+
