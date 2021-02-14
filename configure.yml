@@ -169,15 +169,6 @@
 
 - name: GNOME keyboard shortcuts
   hosts: localhost
-  pre_tasks:
-    - name: create roles directory
-      file:
-        path: './roles'
-        state: directory
-    - name: clone role
-      git:
-        repo: https://github.com/luyz25/gnome_extensions.git
-        dest: roles/
   roles: 
     - role: gnome_extensions
       vars:
