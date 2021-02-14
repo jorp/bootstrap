@@ -1,14 +1,56 @@
 ---
-# vars file for configure-fedora
 install_packages:
+  - arp-scan
+  - baobab
+  - bash-completion
+  - borgbackup
+  - blender
+  - chrome-gnome-shell
   - ffmpeg
   - fping
   - git
   - gnome-extensions-app
   - gnome-tweaks
-  - stow
+  - golang
+  - htop
+  - keepassxc
+  - ImageMagick
+  - java-11-openjdk
+  - lm_sensors
+  - mplayer
+  - mpv
+  - neofetch
+  - nethogs
+  - newsboat
+  - nmap
+  - obs-studio
+  - pcmanfm
+  - python3-devel
+  - python3-streamlink
   - python3-psutil
+  - rkhunter
+  - rsync
+  - sshfs
+  - stow
+  - syncthing
+  - texlive
+  - texlive-preprint
+  - texstudio
+  - tlp
+  - tmux 
+  - units
+  - unrar
+  - vim
+  - virt-manager
+  - vlc
+  - wireshark
+  - youtube-dl
 
 remove_packages:
   - PackageKit
   - cheese
+  - gamemode
+  - tracker
+  - gnome-initial-setup
+  - gnome-software
+  - gnome-tour
