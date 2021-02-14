@@ -1,0 +1,29 @@
+---
+- name: add rpmfusion repos 
+  dnf:
+    name: "{{ item }}"
+    state: latest
+    disable_gpg_check: yes # not recommended
+  loop:
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
+    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm
+
+- name: remove packages
+  dnf:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ remove_packages }}"
+
+- name: patch system
+  dnf:
+    update_cache: yes
+    name: "*"
+    state: latest
+
+- name: install packages
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ install_packages }}"
+
+

@@ -5,4 +5,4 @@
         - 770
   roles:
     - { role: configure-fedora, become: yes }
-    - { role: jaredhocutt.gnome_extensions }
+      #- { role: jaredhocutt.gnome_extensions }
