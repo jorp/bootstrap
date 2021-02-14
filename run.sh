@@ -1,3 +1,4 @@
 #!/bin/bash
-sudo systemctl start sshd
-sudo dnf install ansible git -y
+sudo systemctl enable sshd --now
+sudo dnf install ansible git vim -y
+ansible-galaxy install -r requirements.yml

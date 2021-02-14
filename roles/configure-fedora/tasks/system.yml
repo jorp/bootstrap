@@ -1,26 +1,19 @@
-- name: remove default fluff
-  hosts: localhost
-  become: yes
+- name: get local user name
+  command: whoami
+  changed_when: false
+  become: false
+  register: whoami
 
-  tasks:
-    - name: get local user name
-      command: whoami
-      changed_when: false
-      become: false
-      register: whoami
+- name: remove default directories
+  file:
+    state: absent
+    path: "/home/{{ whoami.stdout }}/{{ item }}"
+  loop:
+    -  "Public"
+    - "Templates"
 
-    - name: remove default directories
-      file:
-        state: absent
-        path: "/home/{{ whoami.stdout }}/{{ item }}"
-      loop:
-        -  "Public"
-        - "Templates"
 - name: use NetworkManager for DNS
-  hosts: localhost
-  become: yes
-
-  tasks:
+  block:
     - name: disable systemd-resolved
       systemd:
         name: systemd-resolved

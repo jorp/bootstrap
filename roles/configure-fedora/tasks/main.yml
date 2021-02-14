@@ -1,9 +1,5 @@
 ---
 # tasks file for configure-fedora
-- name: install htop
-  dnf:
-    name: htop
-    state: latest
-
+- include_tasks: system.yml
 - include_tasks: packages.yml
 

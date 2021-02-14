@@ -7,6 +7,7 @@
         - fping
       remove_packages:
         - cheese
+      patch: no
       firefox_profiles:
         default-release:
           extensions:
