@@ -44,3 +44,64 @@
   dconf:
     key: "/org/gnome/desktop/interface/clock-show-weekday"
     value: "true"
+
+- name: show min, max, close on windows
+  become: no
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/button-layout"
+    value: "'icon:minimize,maximize,close'"
+
+- name: disable hot corner
+  become: no
+  dconf:
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
+    value: "false"
+
+- name: privacy settings
+  block:
+    - name: disable camera
+      dconf:
+        key: "/org/gnome/desktop/privacy/disable-camera"
+        value: "true"
+
+    - name: disable microphone
+      dconf:
+        key: "/org/gnome/desktop/privacy/disable-microphone"
+        value: "true"
+
+    - name: forget recent files
+      dconf:
+        key: "/org/gnome/desktop/privacy/remember-recent-files"
+        value: "false"
+
+    - name: disable problem reporting
+      dconf:
+        key: "/org/gnome/desktop/privacy/report-technical-problems"
+        value: "false"
+
+    - name: disable search providers
+      dconf:
+        key: "/org/gnome/desktop/search-providers/disabled"
+        value: "['org.gnome.Nautilus.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop', 'firefox.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Contacts.desktop']"
+
+- name: disable event sounds
+  dconf:
+    key: "/org/gnome/desktop/sound/event-sounds"
+    value: "false"
+
+- name: show desktop keybinding
+  dconf:
+    key: "/org/gnome/desktop/vm/keybindings/show-desktop"
+    value: "['<Super>d']"
+
+- name: resize with mouse button and alt key
+  block:
+    - name: set modifier button
+      dconf:
+        key: "/org/gnome/wm/preferences/mouse-button-modifier"
+        value: "'<Alt>'"
+
+    - name: resize with button
+      dconf:
+        key: "/org/gnome/wm/preferences/resize-with-right-button"
+        value: "true"

@@ -53,10 +53,10 @@
     line: "set completion-ignore-case On"
 
 - name: improve DNF performance
+  become: yes
   blockinfile:
     path: /etc/dnf/dnf.conf
     create: yes
     block: |
       deltarpm=true
       max_parallel_downloads={{ ansible_processor_vcpus }}
-    become: yes

@@ -3,23 +3,34 @@
   vars:
       patch: no
       install: no
-      remove: no
+      remove: yes
       fusion: no
       gnome_extension_ids:
-        - 615 # AppIndicator and KStatusNotifierItem Support
-        - 751 # Audio Output Switcher
-        - 517 # Caffeine
+        - 355  # Status Area Horizontal Spacing
+        - 517  # Caffeine
+        - 615  # AppIndicator and KStatusNotifierItem Support
+        - 740  # OpenWeather
+        - 751  # Audio Output Switcher
+        - 755  # Hibernate Status Button
+        - 1116 # Workspace Switch Wraparound 
+        #- 1128 # Hide Activities Button
         - 1166 # Extension Update Notifier
-        - 755 # Hibernate Status Button
-        - 1128 # Hide Activities Button
         - 1379 # Mpris Indicator Button
-        - 355 # Status Area Horizontal Spacing
         - 1460 # Vitals
       firefox_profiles:
         default-release:
           extensions:
-            - ublock-origin
+            - bitwarden-password-manager
+            - cookie-autodelete
             - gnome-shell-integration
+            - https-everywhere
+            - imagus
+            - privacy-badger17
+            - privacy-redirect
+            - skip-redirect
+            - startpage-private-search
+            - tampermonkey
+            - ublock-origin
           preferences:
             privacy.donottrackheader.enabled: true
             signon.rememberSignons: false

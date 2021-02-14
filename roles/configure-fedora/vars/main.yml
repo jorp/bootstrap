@@ -29,6 +29,7 @@ install_packages:
   - python3-devel
   - python3-streamlink
   - python3-psutil
+  - qbittorrent
   - rkhunter
   - rsync
   - sshfs
@@ -37,6 +38,7 @@ install_packages:
   - texlive
   - texlive-preprint
   - texstudio
+  - thunderbird
   - tlp
   - tmux 
   - units
