@@ -1,4 +1,4 @@
-install_packages:
+old_install_packages:
   - arp-scan
   - baobab
   - bash-completion
@@ -45,7 +45,7 @@ install_packages:
   - wireshark
   - youtube-dl
 
-remove_packages:
+old_remove_packages:
   - PackageKit
   - cheese
   - gamemode

@@ -14,11 +14,11 @@
     state: absent
   loop: "{{ remove_packages }}"
 
-- name: patch system
-  dnf:
-    update_cache: yes
-    name: "*"
-    state: latest
+    #- name: patch system
+    #dnf:
+    #update_cache: yes
+    #name: "*"
+    #state: latest
 
 - name: install packages
   dnf:

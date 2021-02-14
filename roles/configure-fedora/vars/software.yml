@@ -1,0 +1,10 @@
+install_packages:
+  - ffmpeg
+  - fping
+  - git
+  - gnome-extensions-app
+  - gnome-tweaks
+
+remove_packages:
+  - PackageKit
+  - cheese

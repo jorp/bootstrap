@@ -4,3 +4,6 @@
   dnf:
     name: htop
     state: latest
+
+- include_tasks: packages.yml
+

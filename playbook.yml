@@ -3,6 +3,19 @@
   vars:
       gnome_extension_ids:
         - 770
+      install_packages:
+        - fping
+      remove_packages:
+        - cheese
+      firefox_profiles:
+        default-release:
+          extensions:
+            - ublock-origin
+          preferences:
+            privacy.donottrackheader.enabled: true
+            signon.rememberSignons: false
+            browser.aboutConfig.showWarning: false
   roles:
     - { role: configure-fedora, become: yes }
       #- { role: jaredhocutt.gnome_extensions }
+    - { role: ansible-firefox }

@@ -1,1 +1,2 @@
  - src: jaredhocutt.gnome_extensions
+ - src: https://github.com/jorp/ansible-firefox
