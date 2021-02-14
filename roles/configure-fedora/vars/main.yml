@@ -54,3 +54,8 @@ remove_packages:
   - gnome-initial-setup
   - gnome-software
   - gnome-tour
+
+flatpaks:
+  - com.discordapp.Discord
+  - com.spotify.Spotify
+  - com.mattermost.Desktop

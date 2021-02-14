@@ -50,3 +50,21 @@
         path: reg.dest
         state: absent
   when: "'mullvad-vpn' not in ansible_facts.packages"
+
+- name: setup flatpak
+  block:
+    - name: point to flathub as remote
+      become: no
+      flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: user
+
+    - name: install flatpaks
+      become: no
+      flatpak:
+        name: "{{ item }}"
+        state: present
+        method: user
+      loop: "{{ flatpaks }}"
