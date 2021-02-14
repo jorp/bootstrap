@@ -163,6 +163,27 @@
         value: "'list-view'"
 
 - name: show window list on all monitors
+  become: no
   dconf:
     key: "/org/gnome/shell/extensions/window-list/show-on-all-monitors"
     value: "true"
+
+- name: change alt+tab behavior
+  become: no
+  block:
+    - name: switch applications
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/switch-applications"
+        value: "['<Super>Tab']"
+    - name: switch applications backward
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/switch-applications-backward"
+        value: "['<Shift><Super>Tab']"
+    - name: switch windows
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/switch-windows"
+        value: "['<Alt>Tab']"
+    - name: switch windows backward
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/switch-windows-backward"
+        value: "['<Shift><Alt>Tab']"
