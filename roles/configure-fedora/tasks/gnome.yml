@@ -58,6 +58,7 @@
     value: "false"
 
 - name: privacy settings
+  become: no
   block:
     - name: disable camera
       dconf:
@@ -85,16 +86,19 @@
         value: "['org.gnome.Nautilus.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop', 'firefox.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Contacts.desktop']"
 
 - name: disable event sounds
+  become: no
   dconf:
     key: "/org/gnome/desktop/sound/event-sounds"
     value: "false"
 
 - name: show desktop keybinding
+  become: no
   dconf:
     key: "/org/gnome/desktop/vm/keybindings/show-desktop"
     value: "['<Super>d']"
 
 - name: resize with mouse button and alt key
+  become: no
   block:
     - name: set modifier button
       dconf:
@@ -105,3 +109,22 @@
       dconf:
         key: "/org/gnome/wm/preferences/resize-with-right-button"
         value: "true"
+
+- name: gnome-screenshot defaults
+  become: no
+  block:
+    - name: delay
+      dconf:
+        key: "/org/gnome/gnome-screenshot/delay"
+        value: "4"
+
+    - name: pointer
+      dconf:
+        key: "/org/gnome/gnome-screenshot/include-pointer"
+        value: "false"
+
+- name: detach modal dialogs
+  become: no
+  dconf:
+    key: "/org/gnome/mutter/attach-modal-dialogs"
+    value: "false"
