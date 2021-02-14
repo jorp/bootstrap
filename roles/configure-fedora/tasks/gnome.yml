@@ -26,3 +26,9 @@
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
         value: "'Print'"   
+
+- name: change favorite apps
+  become: no
+  dconf:
+    key: "/org/gnome/shell/favorite-apps"
+    value: "['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'gnome-control-center.desktop', 'org.gnome.tweaks.desktop']"

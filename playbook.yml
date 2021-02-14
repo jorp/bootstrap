@@ -16,6 +16,7 @@
         default-release:
           extensions:
             - ublock-origin
+            - gnome-shell-integration
           preferences:
             privacy.donottrackheader.enabled: true
             signon.rememberSignons: false
