@@ -38,7 +38,7 @@
       systemd:
         name: NetworkManager
         state: restarted
-  when: ansible_facts.services['systemd-resolved.service'].state == 'inactive' and ansible_facts.services['systemd-resolved.service'].status == 'masked'
+  when: ansible_facts.services['systemd-resolved.service'].state != 'inactive' and ansible_facts.services['systemd-resolved.service'].status != 'masked'
 
 - name: make bash completion case insensitive
   lineinfile:
