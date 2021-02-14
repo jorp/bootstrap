@@ -18,6 +18,7 @@ install_packages:
   - keepassxc
   - ImageMagick
   - lm_sensors
+  - mousepad
   - mplayer
   - mpv
   - neofetch
