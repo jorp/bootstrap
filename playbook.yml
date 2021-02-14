@@ -3,6 +3,8 @@
   vars:
       patch: no
       install: no
+      remove: no
+      fusion: no
       gnome_extension_ids:
         - 615 # AppIndicator and KStatusNotifierItem Support
         - 751 # Audio Output Switcher

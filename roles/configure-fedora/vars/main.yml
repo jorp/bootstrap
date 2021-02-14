@@ -41,6 +41,7 @@ install_packages:
   - units
   - unrar
   - vim
+  - '@Virtualization'
   - virt-manager
   - vlc
   - wireshark
@@ -48,12 +49,22 @@ install_packages:
 
 remove_packages:
   - PackageKit
+  - PackageKit-glib
+  - PackageKit-gstreamer-plugin
+  - PackageKit-gtk3-module
   - cheese
   - gamemode
-  - tracker
+  - gnome-shell-extension-apps-menu
+  - gnome-shell-extension-horizontal-workspaces
+  - gnome-shell-extension-places-menu
+  - gnome-online-miners
+  - gnome-boxes
   - gnome-initial-setup
   - gnome-software
   - gnome-tour
+  - libtracker-miner
+  - libzapojit
+  - tracker
 
 flatpaks:
   - com.discordapp.Discord
