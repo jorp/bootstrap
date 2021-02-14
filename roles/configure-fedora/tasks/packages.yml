@@ -26,13 +26,16 @@
     name: "{{ item }}"
     state: latest
   loop: "{{ install_packages }}"
+  when: install
 
-- name: download mullvad rpm
-  get_url:
-    url: https://mullvad.net/download/app/rpm/latest
-    dest: "/tmp"
-  register: res
+- name: download and install mullvad rpm
+  block:
+    - name: download package
+      get_url:
+        url: https://mullvad.net/download/app/rpm/latest
+        dest: "/tmp"
+      register: res
 
-- name: print mullvad location
-  debug:
-    var: res.dest
+    - name: install package
+      dnf:
+        name: "{{ res.dest }}"

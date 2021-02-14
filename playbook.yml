@@ -2,6 +2,7 @@
 - hosts: localhost
   vars:
       patch: no
+      install: no
       gnome_extension_ids:
         - 615 # AppIndicator and KStatusNotifierItem Support
         - 751 # Audio Output Switcher
