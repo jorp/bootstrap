@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+    - { role: configure-fedora, become: yes }

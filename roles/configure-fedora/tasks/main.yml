@@ -1,6 +1,6 @@
 ---
 # tasks file for configure-fedora
-- name: install package
+- name: install htop
   dnf:
-    name: baobab
+    name: htop
     state: latest
