@@ -25,6 +25,7 @@
       systemd:
         name: NetworkManager
         state: restarted
+
 - name: remove packages
   hosts: localhost
   become: yes
@@ -39,7 +40,6 @@
           - gamemode
           - tracker
 
-  tasks:
 - name: configure repos and install packages
   hosts: localhost
   become: yes
