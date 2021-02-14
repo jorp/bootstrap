@@ -3,7 +3,15 @@
   vars:
       patch: no
       gnome_extension_ids:
-        - 770
+        - 615 # AppIndicator and KStatusNotifierItem Support
+        - 751 # Audio Output Switcher
+        - 517 # Caffeine
+        - 1166 # Extension Update Notifier
+        - 755 # Hibernate Status Button
+        - 1128 # Hide Activities Button
+        - 1379 # Mpris Indicator Button
+        - 355 # Status Area Horizontal Spacing
+        - 1460 # Vitals
       firefox_profiles:
         default-release:
           extensions:
@@ -14,5 +22,5 @@
             browser.aboutConfig.showWarning: false
   roles:
     - { role: configure-fedora, become: yes }
-      #- { role: jaredhocutt.gnome_extensions }
+    - { role: jaredhocutt.gnome_extensions }
     - { role: ansible-firefox }
