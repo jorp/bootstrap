@@ -1,4 +1,21 @@
 ---
+- name: get local user name
+  command: whoami
+  changed_when: false
+  become: false
+  register: whoami
+
+- name: get dotfiles
+  become: no
+  git:
+    repo: 'https://github.com/jorp/dotfiles.git'
+    dest: "/home/{{ whoami.stdout }}/dotfiles"
+
+- name: install vundle
+  become: no
+  git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    dest: "/home/{{ whoami.stdout }}/.vim/bundle/Vundle.vim"
 - name: add rpmfusion repos 
   dnf:
     name: "{{ item }}"
