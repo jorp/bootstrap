@@ -84,6 +84,7 @@
         cmd: "stow {{ item }}"
       loop:
         - bash
+        - inputrc
         - vim
 
     - name: install vundle plugins
