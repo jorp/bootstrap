@@ -89,6 +89,7 @@
     - name: install vundle plugins
       command:
         cmd: "vim +PluginInstall +qall"
+        stdin: "\n"
 
 - name: setup flatpak
   block:

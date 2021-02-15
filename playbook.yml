@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   vars:
-      patch: yes
-      install: yes
-      remove: yes
-      fusion: yes
+      patch: no
+      install: no
+      remove: no
+      fusion: no
       gnome_extension_ids:
         - 355  # Status Area Horizontal Spacing
         - 517  # Caffeine
