@@ -70,6 +70,26 @@
         state: absent
   when: "'mullvad-vpn' not in ansible_facts.packages"
 
+- name: set up stow
+  become: no
+  block:
+    - name: remove .bashrc
+      file:
+        path: "/home/{{ whoami.stdout }}/.bashrc"
+        state: absent
+
+    - name: set up with stow
+      command:
+        chdir: "/home/{{ whoami.stdout }}/dotfiles"
+        cmd: "stow {{ item }}"
+      loop:
+        - bash
+        - vim
+
+    - name: install vundle plugins
+      command:
+        cmd: "vim +PluginInstall +qall"
+
 - name: setup flatpak
   block:
     - name: point to flathub as remote
