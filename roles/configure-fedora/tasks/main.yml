@@ -1,6 +1,0 @@
----
-# tasks file for configure-fedora
-- include_tasks: system.yml
-- include_tasks: packages.yml
-- include_tasks: gnome.yml
-

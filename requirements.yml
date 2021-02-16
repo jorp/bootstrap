@@ -1,2 +1,3 @@
- - src: jaredhocutt.gnome_extensions
+ - src: https://github.com/jorp/configure-fedora
  - src: https://github.com/jorp/ansible-firefox
+ - src: jaredhocutt.gnome_extensions

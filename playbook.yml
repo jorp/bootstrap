@@ -37,5 +37,5 @@
             browser.aboutConfig.showWarning: false
   roles:
     - { role: configure-fedora, become: yes }
-      #- { role: jaredhocutt.gnome_extensions }
-      #- { role: ansible-firefox }
+      - { role: jaredhocutt.gnome_extensions }
+      - { role: ansible-firefox }
