@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   vars:
-      patch: no
-      install: no
-      remove: no
-      fusion: no
+      fusion: yes
+      remove: yes
+      install: yes
+      patch: yes
       gnome_extension_ids:
         - 355  # Status Area Horizontal Spacing
         - 517  # Caffeine
@@ -37,5 +37,5 @@
             browser.aboutConfig.showWarning: false
   roles:
     - { role: configure-fedora, become: yes }
-      - { role: jaredhocutt.gnome_extensions }
-      - { role: ansible-firefox }
+    - { role: jaredhocutt.gnome_extensions }
+    - { role: ansible-firefox }
