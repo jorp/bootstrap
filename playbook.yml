@@ -17,6 +17,7 @@
         - 1166 # Extension Update Notifier
         - 1379 # Mpris Indicator Button
         - 1460 # Vitals
+        - 3956 # Fuzzy App Search
       firefox_profiles:
         default-release:
           extensions:
