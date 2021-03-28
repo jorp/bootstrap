@@ -5,38 +5,41 @@
       remove: yes
       install: yes
       patch: yes
-      gnome_extension_ids:
-        - 355  # Status Area Horizontal Spacing
-        - 517  # Caffeine
-        - 615  # AppIndicator and KStatusNotifierItem Support
-        - 740  # OpenWeather
-        - 751  # Audio Output Switcher
-        - 755  # Hibernate Status Button
-        - 1116 # Workspace Switch Wraparound 
-        #- 1128 # Hide Activities Button
-        - 1166 # Extension Update Notifier
-        - 1379 # Mpris Indicator Button
-        - 1460 # Vitals
-        - 3956 # Fuzzy App Search
-      firefox_profiles:
-        default-release:
-          extensions:
-            - bitwarden-password-manager
-            - cookie-autodelete
-            - gnome-shell-integration
-            - https-everywhere
-            - imagus
-            - privacy-badger17
-            - privacy-redirect
-            - skip-redirect
-            - startpage-private-search
-            - tampermonkey
-            - ublock-origin
-          preferences:
-            privacy.donottrackheader.enabled: true
-            signon.rememberSignons: false
-            browser.aboutConfig.showWarning: false
   roles:
-    - { role: jorp.configure_fedora, become: yes }
-    - { role: jaredhocutt.gnome_extensions }
-    - { role: jorp.firefox_addons }
+    - role: jorp.configure_fedora
+      become: yes
+    - role: jaredhocutt.gnome_extensions
+      vars:
+        gnome_extension_ids:
+          - 355  # Status Area Horizontal Spacing
+          - 517  # Caffeine
+          - 615  # AppIndicator and KStatusNotifierItem Support
+          - 740  # OpenWeather
+          - 751  # Audio Output Switcher
+          - 755  # Hibernate Status Button
+          - 1116 # Workspace Switch Wraparound 
+          #- 1128 # Hide Activities Button
+          - 1166 # Extension Update Notifier
+          - 1379 # Mpris Indicator Button
+          - 1460 # Vitals
+          - 3956 # Fuzzy App Search
+    - role: jorp.firefox_addons
+      vars:
+        firefox_profiles:
+          default-release:
+            extensions:
+              - bitwarden-password-manager
+              - cookie-autodelete
+              - gnome-shell-integration
+              - https-everywhere
+              - imagus
+              - privacy-badger17
+              - privacy-redirect
+              - skip-redirect
+              - startpage-private-search
+              - tampermonkey
+              - ublock-origin
+            preferences:
+              privacy.donottrackheader.enabled: true
+              signon.rememberSignons: false
+              browser.aboutConfig.showWarning: false
