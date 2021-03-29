@@ -40,6 +40,52 @@
               - tampermonkey
               - ublock-origin
             preferences:
+              geo.enabled: false
+              geo.wifi.uri: "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"
+              geo.wifi.logging.enabled: false
+              media.peerconnection.ice.default_address_only: true
+              media.peerconnection.ice.no_host: true
+              media.webspeech.synth.enabled: false
+              device.sensors.enabled: false
+              browser.send_pings: false
+              dom.gamepad.enabled: false
+              dom.vibrator.enabled: false
+              webgl.disabled: true
+              dom.battery.enabled: false
+              dom.maxHardwareConcurrency: 2
+              camera.control.face_detection.enabled: false
+              browser.search.geoip.url: ""
+              clipboard.autocopy: false
+              network.manage-offline-status: false
+              extensions.update.enabled: true
+              dom.telephony.enabled: false
+              beacon.enabled: false
               privacy.donottrackheader.enabled: true
               signon.rememberSignons: false
               browser.aboutConfig.showWarning: false
+              toolkit.telemetry.enabled: false
+              toolkit.telemetry.unified: false
+              experiments.supported: false
+              experiments.enabled: false
+              experiments.manifest.uri: ""
+              network.allow-experiments: false
+              breakpad.reportURL: ""
+              browser.tabs.crashReporting.sendReport: false
+              browser.crashReports.unsubmittedCheck.enabled: false
+              dom.flyweb.enabled: false
+              browser.uitour.enabled: false
+              privacy.trackingprotection.enabled: true
+              privacy.trackingprotection.pbmode.enabled: true
+              privacy.userContext.enabled: true
+              privacy.resistFingerprinting: true
+              datareporting.healthreport.uploadEnabled: false
+              datareporting.healthreport.service.enabled: false
+              datareporting.policy.dataSubmissionEnabled: false
+              loop.logDomains: false
+              browser.pocket.enabled: false
+              extensions.pocket.enabled: false
+              browser.newtabpage.activity-stream.feeds.section.topstories: false
+              browser.newtabpage.activity-stream.feeds.section.highlights: false
+              browser.newtabpage.activity-stream.feeds.snippets: false
+              browser.newtabpage.activity-stream.feeds.topsites: false
+              network.predictor.enabled: false
