@@ -1,0 +1,9 @@
+---
+flatpaks:
+  - com.discordapp.Discord
+  - com.mattermost.Desktop
+  - com.rafaelmardojai.Blanket
+  - com.spotify.Client
+  - com.sweethome3d.Sweethome3d
+  - io.freetubeapp.FreeTube
+  - org.gnome.GTG

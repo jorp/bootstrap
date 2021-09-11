@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  vars:
+      fusion: yes
+      remove: yes
+      install: yes
+      patch: yes
+  vars_files:
+    - vars/flatpaks.yml
+    - vars/gnome_extensions.yml
+    - vars/go_packages.yml
+    - vars/packages.yml
+  roles:
+    - role: jorp.configure_fedora
+      become: yes
+    - role: jaredhocutt.gnome_extensions

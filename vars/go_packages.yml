@@ -1,0 +1,4 @@
+---
+go_packages:
+  - "github.com/cheat/cheat/cmd/cheat"
+  - "github.com/xxxserxxx/gotop/v4/cmd/gotop"

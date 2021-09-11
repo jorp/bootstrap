@@ -1,0 +1,13 @@
+        gnome_extension_ids:
+          - 355  # Status Area Horizontal Spacing
+          - 517  # Caffeine
+          - 615  # AppIndicator and KStatusNotifierItem Support
+          - 750  # OpenWeather
+          - 751  # Audio Output Switcher
+          - 755  # Hibernate Status Button
+          - 1116 # Workspace Switch Wraparound 
+          #- 1128 # Hide Activities Button
+          - 1166 # Extension Update Notifier
+          - 1379 # Mpris Indicator Button
+          - 1460 # Vitals
+          - 3956 # Fuzzy App Search
