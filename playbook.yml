@@ -28,17 +28,22 @@
         firefox_profiles:
           default-release:
             extensions:
+              - alike03s-subscription-info
+              - augmented-steam
               - bitwarden-password-manager
               - cookie-autodelete
               - gnome-shell-integration
+              - google-search-link-fix
               - https-everywhere
               - imagus
               - privacy-badger17
               - privacy-redirect
               - skip-redirect
+              - sponsorblock
               - startpage-private-search
               - tampermonkey
               - ublock-origin
+              - violentmonkey
             preferences:
               geo.enabled: false
               geo.wifi.uri: "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%"
